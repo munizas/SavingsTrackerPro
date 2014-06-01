@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.18592964824120603" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="466.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="savingstrackerpro.controllers.ExpensePaneController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="156.0" prefWidth="598.0">
+         <children>
+            <VBox prefHeight="195.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" expanded="false" text="Expenses" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="16.0" prefWidth="46.0" text="Name" />
+                        <TextField fx:id="nameField" prefHeight="26.0" prefWidth="226.0" promptText="Enter New Name">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label prefHeight="16.0" prefWidth="118.0" text="Default Amount" />
+                        <TextField fx:id="defaultAmountField" prefHeight="26.0" prefWidth="119.0" promptText="Amount">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAddButton" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="317.0" prefWidth="598.0">
+         <children>
+            <VBox prefHeight="327.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="tableView" editable="true" prefHeight="327.0" prefWidth="598.0">
+                    <columns>
+                      <TableColumn fx:id="nameCol" editable="false" prefWidth="186.0" text="Name" />
+                      <TableColumn fx:id="defaultAmountCol" prefWidth="122.0" text="Defaul Amount" />
+                        <TableColumn fx:id="actionCol" prefWidth="112.0" text="Action" />
+                    </columns>
+                  </TableView>
+                  <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                      <Button fx:id="closeButton" mnemonicParsing="false" text="Close" />
+                    </items>
+                  </ToolBar>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

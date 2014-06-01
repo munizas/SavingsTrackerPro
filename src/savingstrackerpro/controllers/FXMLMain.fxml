@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="savingstrackerpro.controllers.MainController">
+    <fx:include fx:id="monthEditSplitPane" source="FXMLMonth.fxml"/>
+    <fx:include fx:id="expenseEditSplitPane" source="FXMLExpense.fxml"/>
+    <children>
+      <VBox fx:id="vBox" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <MenuBar fx:id="menuBar">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="importExpenseMenuItem" mnemonicParsing="false" onAction="#handleImportExpenseMenuItem" text="Import Expense Data" />
+                        <MenuItem fx:id="importMonthlyDataMenuItem" mnemonicParsing="false" onAction="#handleImportMonthlyDataMenuItem" text="Import Monthly Data" />
+                        <MenuItem fx:id="saveDataMenuItem" mnemonicParsing="false" onAction="#handleSaveDataMenuItem" text="Save" />
+                    <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleExitMenutItem" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <MenuItem fx:id="expenseMenuItem" mnemonicParsing="false" onAction="#handleExpenseMenuItem" text="Expenses" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar fx:id="toolBar" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label text="From" />
+                  <DatePicker fx:id="fromDatePicker" />
+                  <Label text="To" />
+                  <DatePicker fx:id="toDatePicker" />
+                  <Button fx:id="dateRunButton" mnemonicParsing="false" onAction="#handleDateRunButton" />
+                  <Label fx:id="avgLabel" textFill="#e33636">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </items>
+            </ToolBar>
+            <SplitPane fx:id="splitPane" dividerPositions="0.5718157181571816" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <LineChart fx:id="lineChart" prefHeight="162.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TableView fx:id="tableView" prefHeight="194.0" prefWidth="668.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="yearCol" prefWidth="54.0" text="Year" />
+                            <TableColumn fx:id="monthCol" prefWidth="72.0" text="Month" />
+                              <TableColumn fx:id="incomeCol" prefWidth="69.0" text="Income" />
+                              <TableColumn fx:id="expensesCol" minWidth="0.0" prefWidth="95.0" text="Expenses" />
+                              <TableColumn fx:id="dispIncomeCol" prefWidth="136.0" text="Disposable Income" />
+                              <TableColumn fx:id="savingsCol" prefWidth="66.0" text="Savings" />
+                              <TableColumn fx:id="actionCol" prefWidth="60.0" text="Action" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <ToolBar fx:id="statusBar" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label fx:id="statusLabel" />
+               </items></ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

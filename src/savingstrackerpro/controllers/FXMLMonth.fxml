@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane fx:id="monthEditSplitPane" dividerPositions="0.27889447236180903" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="savingstrackerpro.controllers.MonthPaneController">
+  <items>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <VBox layoutX="255.0" layoutY="-19.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="195.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TitledPane fx:id="tPane" animated="false" collapsible="false" text="Month - Year" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="16.0" prefWidth="125.0" text="Income" />
+                        <TextField fx:id="incomeTextField" prefHeight="26.0" prefWidth="148.0" promptText="Rolling Income" />
+                        <Label prefHeight="16.0" prefWidth="97.0" text="Expense Total" />
+                        <TextField fx:id="expenseTotalTextField" disable="true" editable="false" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="16.0" prefWidth="125.0" text="Disposable Income" />
+                        <TextField fx:id="disposableIncomeTextField" disable="true" editable="false" />
+                        <Label prefHeight="16.0" prefWidth="95.0" text="Savings" />
+                        <TextField fx:id="savingsTextField" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0">
+         <children>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="283.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                        <Label text="Expenses" />
+                        <ComboBox fx:id="expensesComboBox" prefWidth="150.0" />
+                      <Button fx:id="addExpenseButton" mnemonicParsing="false" onAction="#handleAddExpenseButton" />
+                    </items>
+                  </ToolBar>
+                  <TableView fx:id="tableView" editable="true" maxHeight="1.7976931348623157E308" prefHeight="195.0" prefWidth="598.0">
+                    <columns>
+                      <TableColumn fx:id="nameCol" editable="false" prefWidth="75.0" text="Name" />
+                      <TableColumn fx:id="amountCol" prefWidth="75.0" text="Amount" />
+                        <TableColumn fx:id="activeCol" prefWidth="75.0" text="Active" />
+                        <TableColumn fx:id="noteCol" prefWidth="284.0" text="Note" />
+                        <TableColumn fx:id="actionCol" minWidth="0.0" prefWidth="82.0" text="Action" />
+                    </columns>
+                  </TableView>
+                  <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT" prefHeight="31.0" prefWidth="598.0">
+                    <items>
+                      <Button fx:id="closeButton" mnemonicParsing="false" text="Close" />
+                    </items>
+                  </ToolBar>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
